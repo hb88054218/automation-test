@@ -1,0 +1,55 @@
+rooms:
+  - roomName: "001"
+    type: "Single"
+    accessible: True
+    description: "the room is warm and soft"
+    image: "https://www.mwtestconsultancy.co.uk/img/room.jpg"
+    roomPrice: "350"
+    features: ["WiFi","TV","Radio","Safe"]
+    expected_status: 200
+    expected_result: True
+  - roomName: "002"
+    type: "Twin"
+    accessible: True
+    description: "the room is warm and soft"
+    image: "https://www.mwtestconsultancy.co.uk/img/room.jpg"
+    roomPrice: "350"
+    features: ["WiFi","TV","Radio","Safe"]
+    expected_status: 200
+    expected_result: True
+  - roomName: "003"
+    type: "Double"
+    accessible: True
+    description: "the room is warm and soft"
+    image: "https://www.mwtestconsultancy.co.uk/img/room.jpg"
+    roomPrice: "350"
+    features: ["WiFi","TV","Radio","Safe"]
+    expected_status: 200
+    expected_result: True
+  - roomName: "004"
+    type: "Family"
+    accessible: True
+    description: "the room is warm and soft"
+    image: "https://www.mwtestconsultancy.co.uk/img/room.jpg"
+    roomPrice: "350"
+    features: ["WiFi","TV","Radio","Safe"]
+    expected_status: 200
+    expected_result: True
+  - roomName: "005"
+    type: "Suite"
+    accessible: True
+    description: "the room is warm and soft"
+    image: "https://www.mwtestconsultancy.co.uk/img/room.jpg"
+    roomPrice: "350"
+    features: ["WiFi","TV","Radio","Safe"]
+    expected_status: 200
+    expected_result: True
+  - roomName: "006"
+    type: "Bedroom"
+    accessible: True
+    description: "the room is warm and soft"
+    image: "https://www.mwtestconsultancy.co.uk/img/room.jpg"
+    roomPrice: "350"
+    features: [ "WiFi","TV","Radio","Safe" ]
+    expected_status: 400
+    expected_result: False
