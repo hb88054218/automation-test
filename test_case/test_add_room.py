@@ -10,7 +10,7 @@ from utils.load_test_data import load_room_test_data
 
 
 @pytest.mark.parametrize('room_data',load_room_test_data())
-def test_add_room(get_token,api_client,room_data):
+def test_add_room(api_client,room_data):
     #url
     #url = 'https://automationintesting.online/api/room'
     #请求体

@@ -121,8 +121,27 @@ def temp_room(get_token):#生成新的roomid并清理数据
     yield room_id
     del_room(get_token,room_id)
 
+@pytest.fixture(scope="function")
+def booking_cleaner(get_token,api_client):
+    """此函数的作用域是function，用于共测试函数调用清理酒店预定数据"""
+    bookingids = []
+    def add_bookingid(booking_id):
+        bookingids.append(booking_id)
+    yield add_bookingid
 
-def del_room(get_token,room_id):#删除接口
+    for bid in bookingids:
+        try:
+            response = api_client.delete(f'/api/message/{bid}')
+            if response.status_code != 202:
+                continue
+            assert response.status_code == 202,\
+                f"删除响应状态码200但清理失败: {response.text}"
+        except Exception as e:
+            print(f'清理报错：{e}')
+
+
+
+def del_room(get_token,room_id):#删除房间接口
     url = f'https://automationintesting.online/api/room/{room_id}'
     # 请求体
     # 请求头
