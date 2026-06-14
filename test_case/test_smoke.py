@@ -8,8 +8,7 @@ import requests
 import pytest
 from utils.Api_Client import ApiClient
 @pytest.mark.smoke
-def test_smoke():
-
+def test_smoke(api_client):
     payload = {
         'username': 'admin',
         'password': 'password'
@@ -17,7 +16,7 @@ def test_smoke():
     headers = {
         'Content-Type': 'application/json'
     }
-    response = ApiClient.post('/api/auth/login',json = payload,headers=headers)
+    response = api_client.post('/api/auth/login',json = payload,headers=headers)
     assert response.status_code == 200 ,\
         f'期望响应码200，实际响应码{response.status_code}'
     assert 'token' in response.json() and bool(response.json()['token']),\
